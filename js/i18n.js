@@ -2,6 +2,7 @@
 window.I18N = {
   en: {
     _title: "Websites for small businesses - 350 € once | konkos.design",
+    _desc: "A free homepage concept for your business first. The full website for 350 € once, only if you like it. Domain and launch included.",
     skip: "Skip to the work",
     nav_work: "Work", nav_process: "How it works", nav_price: "Price", nav_faq: "FAQ", nav_contact: "Contact",
     theme_dark: "Dark mode", theme_light: "Light mode",
@@ -68,6 +69,7 @@ window.I18N = {
 
   ua: {
     _title: "Сайти для малого бізнесу - 350 € одноразово | konkos.design",
+    _desc: "Спочатку безкоштовний концепт головної сторінки вашого бізнесу. Повний сайт за 350 € одноразово, лише якщо він вам сподобається. Домен і запуск включено.",
     skip: "Перейти до робіт",
     nav_work: "Роботи", nav_process: "Як це працює", nav_price: "Ціна", nav_faq: "Питання", nav_contact: "Контакти",
     theme_dark: "Темна тема", theme_light: "Світла тема",

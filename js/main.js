@@ -18,6 +18,7 @@
   function applyLang(first) {
     doc.lang = lang === 'ua' ? 'uk' : 'en'; doc.dataset.lang = lang;
     document.title = t('_title');
+    var md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute('content', t('_desc'));
     $$('[data-i18n]').forEach(function (el) { var v = t(el.dataset.i18n); if (typeof v === 'string') el.textContent = v; });
     $$('[data-i18n-html]').forEach(function (el) { var v = t(el.dataset.i18nHtml); if (typeof v === 'string') el.innerHTML = v; });
     $$('[data-i18n-list]').forEach(function (el) {
@@ -34,6 +35,7 @@
     b.addEventListener('click', function () {
       if (b.dataset.lang === lang) return;
       lang = b.dataset.lang; store.set('kd-lang', lang);
+      try { var u = new URL(location.href); if (lang === 'ua') u.searchParams.set('lang', 'ua'); else u.searchParams.delete('lang'); history.replaceState(null, '', u.pathname + u.search + u.hash); } catch (e) {}
       var swap = function () { applyLang(false); if (window.ScrollTrigger) ScrollTrigger.refresh(); };
       if (hasGsap()) gsap.to('.hero__copy > :not(.strip)', { opacity: 0, y: 8, duration: .18, onComplete: function () {
         swap(); gsap.to('.hero__copy > :not(.strip)', { opacity: 1, y: 0, duration: .5, ease: 'expo.out' });
